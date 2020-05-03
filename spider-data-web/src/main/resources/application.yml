@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://10.26.21.22:3306/knowledge?useUnicode=true&characterEncoding=utf-8&autoReconnect=true
+    username: root
+    password: 1qaz!QAZ
+    driver-class-name: com.mysql.jdbc.Driver
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 200MB
+      max-request-size: 200MB
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@10.26.21.84:9179/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}

@@ -1,0 +1,7 @@
+*.tar.gz
+*.log
+.idea/*
+*.class
+*.iml
+*.DS_Store
+target/
